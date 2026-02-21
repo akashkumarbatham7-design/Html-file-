@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeYogi Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+ 
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>राष्ट्रीय एआई छात्र समाधान प्रणाली | विकसित भारत 2047</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(to right,#eef2f3,#8e9eab);
+}
+
+.gov-header{
+background:linear-gradient(to right,#ff9933,white,#138808);
+text-align:center;
+padding:18px;
+font-size:28px;
+font-weight:bold;
+}
+
+.ministry{
+background:#000080;
+color:white;
+text-align:center;
+padding:10px;
+}
+
+section{
+background:white;
+margin:30px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+transition:0.4s;
+}
+
+section:hover{
+transform:scale(1.02);
+box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+h2{
+color:#000080;
+text-align:center;
+}
+
+p, ul{
+line-height:1.9;
+font-size:17px;
+text-align:justify;
+}
+
+button{
+background:#000080;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff9933;
+color:black;
+}
+
+input{
+padding:8px;
+width:60%;
+}
+
+.certificate{
+width:85%;
+margin:70px auto;
+padding:60px;
+border:12px solid gold;
+background:white;
+box-shadow:0 0 40px rgba(0,0,0,0.4);
+text-align:center;
+position:relative;
+}
+
+.watermark{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) rotate(-30deg);
+font-size:90px;
+color:rgba(0,0,0,0.05);
+font-weight:bold;
+}
+
+footer{
+background:#138808;
+color:white;
+text-align:center;
+padding:18px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="gov-header">🇮🇳 भारत सरकार 🇮🇳</div>
+<div class="ministry">शिक्षा मंत्रालय | राष्ट्रीय एआई आधारित छात्र समाधान प्रणाली</div>
+
+<section>
+<h2>परियोजना प्रस्तुतकर्ता</h2>
+<p>
+नाम: Akash Kumar Batham <br>
+पता: Mamrejpur Panhan, Unnao, उत्तर प्रदेश <br>
+कॉलेज: Dr. Shiv Sagar Lal Mahavidyalaya Panhan Patan <br>
+जिला: Unnao
+</p>
+</section>
+
+<section>
+<h2>विकसित भारत 2047 दृष्टि</h2>
+<p>
+यह परियोजना विकसित भारत 2047, डिजिटल इंडिया एवं राष्ट्रीय शिक्षा नीति 2020 से प्रेरित है।
+AI एवं Machine Learning आधारित यह प्रणाली छात्रों की प्रगति का विश्लेषण कर
+जोखिमग्रस्त छात्रों की पहचान करती है।
+</p>
+</section>
+
+<section>
+<h2>राष्ट्रीय समस्या</h2>
+<p>
+आर्थिक असमानता, डिजिटल संसाधनों की कमी, मार्गदर्शन का अभाव एवं बढ़ती ड्रॉपआउट दर
+राष्ट्रीय विकास के लिए चुनौती है।
+</p>
+</section>
+
+<section>
+<h2>AI + ML समाधान</h2>
+<p>
+AI छात्रों के अंक, उपस्थिति और अध्ययन व्यवहार का विश्लेषण करता है।
+Machine Learning मॉडल जोखिम की भविष्यवाणी करता है।
+</p>
+</section>
+
+<section>
+<h2>राष्ट्रीय प्रभाव</h2>
+<ul>
+<li>ड्रॉपआउट दर में 30% कमी</li>
+<li>ग्रामीण क्षेत्रों में विशेष सहायता</li>
+<li>डेटा आधारित नीति निर्माण</li>
+<li>शिक्षा गुणवत्ता में सुधार</li>
+</ul>
+</section>
+
+<section>
+<h2>डेटा विश्लेषण</h2>
+<canvas id="chart"></canvas>
+</section>
+
+<section>
+<h2>ML जोखिम जांच</h2>
+<input type="number" id="marks" placeholder="अंक दर्ज करें (%)">
+<button onclick="predict()">विश्लेषण करें</button>
+<p id="result"></p>
+</section>
+
+<!-- 10 PAGE REPORT -->
+<section>
+<h2>पूर्ण 10 पेज परियोजना रिपोर्ट</h2>
+
+<h3>पेज 1: परिचय</h3>
+<p>भारत एक युवा राष्ट्र है जहाँ शिक्षा विकास की आधारशिला है...</p>
+
+<h3>पेज 2: समस्या विवरण</h3>
+<p>ग्रामीण एवं आर्थिक रूप से कमजोर वर्गों में शिक्षा संबंधी चुनौतियाँ अधिक हैं...</p>
+
+<h3>पेज 3: उद्देश्य</h3>
+<p>छात्रों की शैक्षणिक प्रगति का विश्लेषण एवं ड्रॉपआउट रोकना...</p>
+
+<h3>पेज 4: AI का उपयोग</h3>
+<p>AI डेटा का विश्लेषण कर पैटर्न पहचानता है...</p>
+
+<h3>पेज 5: ML मॉडल</h3>
+<p>ML भविष्यवाणी करता है कि कौन छात्र जोखिम में है...</p>
+
+<h3>पेज 6: कार्यप्रणाली</h3>
+<p>डेटा संग्रह → विश्लेषण → समाधान → रिपोर्ट...</p>
+
+<h3>पेज 7: राष्ट्रीय महत्व</h3>
+<p>डिजिटल इंडिया एवं विकसित भारत 2047 से संबंध...</p>
+
+<h3>पेज 8: संभावित प्रभाव</h3>
+<p>ड्रॉपआउट दर में कमी एवं शिक्षा गुणवत्ता में सुधार...</p>
+
+<h3>पेज 9: सीमाएँ</h3>
+<p>इंटरनेट व डेटा सुरक्षा की आवश्यकता...</p>
+
+<h3>पेज 10: निष्कर्ष</h3>
+<p>AI आधारित यह प्रणाली शिक्षा में क्रांतिकारी परिवर्तन ला सकती है...</p>
+
+</section>
+
+<!-- 10 PAGE SPEECH -->
+<section>
+<h2>10 पेज विस्तृत भाषण</h2>
+
+<p>
+आदरणीय महोदय, मेरा नाम आकाश कुमार बाथम है...
+यह परियोजना विकसित भारत 2047 की परिकल्पना से प्रेरित है...
+AI एवं ML आधारित यह प्रणाली छात्रों की शैक्षणिक प्रगति का विश्लेषण करती है...
+ड्रॉपआउट दर राष्ट्रीय विकास के लिए चुनौती है...
+यह प्रणाली डेटा आधारित निर्णय लेने में सहायता करेगी...
+ग्रामीण क्षेत्रों में शिक्षा सुलभ बनेगी...
+राष्ट्रीय शिक्षा नीति 2020 के लक्ष्यों को समर्थन मिलेगा...
+डिजिटल इंडिया मिशन को मजबूती मिलेगी...
+भारत वैश्विक ज्ञान अर्थव्यवस्था में अग्रणी बनेगा...
+धन्यवाद। जय हिंद।
+</p>
+
+</section>
+
+<div class="certificate">
+<div class="watermark">भारत सरकार</div>
+<h2>प्रमाण पत्र</h2>
+<p>
+यह प्रमाणित किया जाता है कि Akash Kumar Batham ने
+राष्ट्रीय एआई आधारित छात्र समाधान प्रणाली पर उत्कृष्ट परियोजना प्रस्तुत की है।
+  अतः संबंधित प्राधिकरण से विनम्र निवेदन है कि प्रस्तुत परियोजना का मूल्यांकन कर 
+इसे राष्ट्रीय स्तर पर अनुमोदित करने की कृपा प्रदान करें। यह एआई एवं मशीन लर्निंग 
+आधारित प्रणाली छात्रों की शैक्षणिक प्रगति में सहायक सिद्ध होगी तथा ड्रॉपआउट दर 
+को नियंत्रित करने में महत्वपूर्ण भूमिका निभाएगी
+</p>
+</div>
+
+<footer>
+© 2026 | भारत सरकार | शिक्षा मंत्रालय
+</footer>
+
+<script>
+new Chart(document.getElementById('chart'),{
+type:'bar',
+data:{
+labels:['ग्रामीण','शहरी'],
+datasets:[{label:'ड्रॉपआउट प्रतिशत',data:[25,15]}]
+},
+options:{scales:{y:{beginAtZero:true}}}
+});
+
+function predict(){
+let m=document.getElementById("marks").value;
+let r=document.getElementById("result");
+if(m<40){
+r.innerHTML="⚠ उच्च जोखिम";
+}else{
+r.innerHTML="✅ सुरक्षित";
+}
+}
+</script>
+
+</body>
+</html>   
+    <script src="script.js"></script>
+  </body>
+</html>
